@@ -14,6 +14,9 @@ The system allows users to enter environmental conditions and receive a predicte
 ### PM2.5 Prediction
 ![Prediction Page](screenshots/prediction.png)
 
+### PM2.5 Prediction-Result
+![Prediction Page](screenshots/prediction-result.png)
+
 ### Dashboard
 ![Analytics Dashboard](screenshots/dashboard.png)
 
