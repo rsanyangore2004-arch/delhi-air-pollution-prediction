@@ -8,6 +8,19 @@ Air pollution is a major environmental challenge in Delhi, India. This project u
 
 The system allows users to enter environmental conditions and receive a predicted PM2.5 concentration together with an indicative pollution category.
 
+
+## Application Screenshots
+
+### PM2.5 Prediction
+![Prediction Page](screenshots/prediction.png)
+
+### Dashboard
+![Analytics Dashboard](screenshots/dashboard.png)
+
+### Data Visualizations
+![Air Pollution Visualizations](screenshots/visualizations.png)
+
+
 ## Project Objectives
 
 - Analyse historical PM2.5 air-quality data.
