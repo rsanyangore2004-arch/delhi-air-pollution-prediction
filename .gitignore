@@ -1,0 +1,20 @@
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables and secrets
+.env
+
+# Trained model files (too large for normal GitHub upload)
+*.pkl
+*.joblib
+
+# Temporary files
+*.log
+.DS_Store

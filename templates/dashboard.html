@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Pollution Dashboard</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+   <div class="nav-links">
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('visualizations') }}">Visualizations</a>
+    <a href="{{ url_for('home') }}">PM2.5 Prediction</a>
+</div>
+</nav>
+
+<div class="dashboard">
+
+    <div class="welcome">
+        <h1>Air Pollution Dashboard</h1>
+        <p>Explore Delhi air quality data and machine learning results.</p>
+    </div>
+
+    <h2>Dataset Overview</h2>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <p>Total Records</p>
+            <h2>{{ summary.records }}</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Dataset Columns</p>
+            <h2>{{ summary.columns }}</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Average PM2.5</p>
+            <h2>{{ summary.average_pm25 }}</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Maximum PM2.5</p>
+            <h2>{{ summary.maximum_pm25 }}</h2>
+        </div>
+    </div>
+
+    <h2>Model Performance Comparison</h2>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>R² Score</th>
+                    <th>MAE</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for item in models %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ "%.4f"|format(item.r2) }}</td>
+                    <td>{{ "%.2f"|format(item.mae) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Random Forest Feature Importance</h2>
+
+    <div class="importance-card">
+        {% for item in importance %}
+        <div class="importance-item">
+            <div class="importance-label">
+                <span>{{ item.name }}</span>
+                <span>{{ "%.2f"|format(item.value) }}%</span>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-bar"
+                     style="width: {{ item.value }}%">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="prediction-link">
+        <h2>Ready to make a prediction?</h2>
+        <p>Enter environmental conditions to estimate PM2.5 concentration.</p>
+        <a href="{{ url_for('home') }}" class="dashboard-button">
+            Open Prediction System
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

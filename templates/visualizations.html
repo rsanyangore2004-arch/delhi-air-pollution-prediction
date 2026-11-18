@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Pollution Visualizations</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="brand">Delhi Air Quality</div>
+
+    <div class="nav-links">
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('visualizations') }}">Visualizations</a>
+        <a href="{{ url_for('home') }}">Prediction</a>
+    </div>
+</nav>
+
+<div class="dashboard">
+
+    <div class="welcome">
+        <h1>Air Pollution Visualizations</h1>
+        <p>Explore patterns and relationships in Delhi's PM2.5 data.</p>
+    </div>
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+            <h2>Monthly Average PM2.5</h2>
+            <p>Shows how average PM2.5 concentration changes over time.</p>
+            <img src="{{ url_for('static', filename='images/monthly_pm25.png') }}"
+                 alt="Monthly average PM2.5 chart">
+        </div>
+
+        <div class="chart-card">
+            <h2>PM2.5 by Hour</h2>
+            <p>Compares average PM2.5 concentration across different hours.</p>
+            <img src="{{ url_for('static', filename='images/hourly_pm25.png') }}"
+                 alt="Hourly PM2.5 chart">
+        </div>
+
+        <div class="chart-card">
+            <h2>Temperature and PM2.5</h2>
+            <p>Explores the relationship between temperature and PM2.5.</p>
+            <img src="{{ url_for('static', filename='images/temperature_pm25.png') }}"
+                 alt="Temperature and PM2.5 scatter plot">
+        </div>
+
+        <div class="chart-card">
+            <h2>Most Polluted Monitoring Stations</h2>
+            <p>Shows the ten stations with the highest average PM2.5.</p>
+            <img src="{{ url_for('static', filename='images/station_pm25.png') }}"
+                 alt="Top ten stations by average PM2.5">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

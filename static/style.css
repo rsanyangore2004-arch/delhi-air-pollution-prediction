@@ -1,0 +1,274 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 40px 15px;
+}
+
+.container {
+    max-width: 550px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #17365d;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 11px;
+    margin-top: 7px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    background: #176b87;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #104d64;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    background: #e5f4ef;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.result h1 {
+    color: #16734a;
+    font-size: 36px;
+}
+
+.error {
+    margin-top: 20px;
+    padding: 12px;
+    background: #ffe5e5;
+    color: #a00000;
+    border-radius: 6px;
+}
+
+
+/* Dashboard navigation */
+.navbar {
+    background: #17365d;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard layout */
+.dashboard {
+    max-width: 1150px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+.welcome {
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    text-align: left;
+    color: #17365d;
+}
+
+.dashboard h2 {
+    color: #17365d;
+    margin-top: 35px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.stat-card p {
+    color: #666;
+}
+
+.stat-card h2 {
+    font-size: 27px;
+    margin: 10px 0;
+}
+
+.table-container,
+.importance-card {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #eaf1f7;
+    color: #17365d;
+}
+
+.importance-item {
+    margin: 20px 0;
+}
+
+.importance-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.progress-track {
+    background: #e5eaf0;
+    height: 11px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: #176b87;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.prediction-link {
+    margin-top: 35px;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dashboard-button {
+    display: inline-block;
+    background: #176b87;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.dashboard-button:hover {
+    background: #104d64;
+}
+
+@media (max-width: 750px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Visualizations page */
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.chart-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+.chart-card h2 {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.chart-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.chart-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+@media (max-width: 750px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+}

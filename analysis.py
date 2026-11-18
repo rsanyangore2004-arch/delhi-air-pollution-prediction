@@ -72,21 +72,17 @@ data['industrial_zone'] = data['station_clean'].apply(
     lambda x: 1 if any(ind.split()[0] in x for ind in industrial_areas) else 0
 )
 
-# TRAFFIC FEATURE 
-# Since traffic areas don't match airquality stations,
-# we use average traffic as a proxy feature
-traffic_avg = traffic['traffic_score'].mean()
-data['avg_traffic'] = traffic_avg
-
-
 # FINAL CLEAN DATASET
 # Keep only important columns for modeling
 
-final_data = data[['datetime', 'station_clean', 'pm25',
-                   'avg_traffic', 'industrial_zone',
-                   'hour', 'rush_hour',
-                   'temperature', 'humidity', 'wind_speed']]
+# FINAL DATASET
+# Keep relevant features for pollution prediction.
+# Traffic is excluded because the traffic records cannot
+# currently be accurately matched to AQI records.
 
+final_data = data[['datetime', 'station_clean', 'pm25',
+                   'industrial_zone', 'hour', 'rush_hour',
+                   'temperature', 'humidity', 'wind_speed']]
 
 # CHECK MERGED DATASET (VERY IMPORTANT)
 print("\nFINAL DATASET PREVIEW:")
